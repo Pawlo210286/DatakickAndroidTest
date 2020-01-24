@@ -13,17 +13,37 @@ def depends = [
         [configuration: "implementation", dependency: base.constraintlayout],
         [configuration: "implementation", dependency: base.lifecycle],
         [configuration: "implementation", dependency: base.lifecycleKtx],
+        [configuration: "implementation", dependency: base.paging],
 
         [configuration: "implementation", dependency: base.coroutinesCore],
         [configuration: "implementation", dependency: base.coroutinesAndroid],
 
+        [configuration: "implementation", dependency: base.glide],
+        [configuration: "annotationProcessor", dependency: base.glideAnnotationProcessor],
+
+        [configuration: "implementation", dependency: retrofit.retrofit],
+        [configuration: "implementation", dependency: retrofit.converter],
+        [configuration: "implementation", dependency: retrofit.coroutines],
+        [configuration: "implementation", dependency: retrofit.okhttp],
+        [configuration: "implementation", dependency: retrofit.logging],
+
+        [configuration: "testImplementation", dependency: test.junit],
+        [configuration: "testImplementation", dependency: test.mockito],
+        [configuration: "testImplementation", dependency: test.mockitoKtx],
+        [configuration: "androidTestImplementation", dependency: test.runner],
+        [configuration: "androidTestImplementation", dependency: test.rules],
+
         [configuration: "implementation", dependency: kodein.generic],
-        [configuration: "implementation", dependency: kodein.framework]
+        [configuration: "implementation", dependency: kodein.framework],
+
+        [configuration: "implementation", dependency: other.carouselview]
 ]
 
 android {
     defaultConfig {
         applicationId "com.test"
+
+        buildConfigField "String", "BASE_URL", "\"https://www.datakick.org/api/\""
     }
 
     dataBinding {

@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Test_23_01_20</string>
+    <string name="app_name">Test_App</string>
+    <string name="details">Details</string>
+    <string name="items">Items</string>
+    <string name="search">Search</string>
 </resources>

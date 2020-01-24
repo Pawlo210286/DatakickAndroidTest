@@ -1,11 +1,45 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
+
+
+    <!-- region TextAppearance -->
+    <style name="TAHeader1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TAHeader2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TAHeader3" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TASubTitle1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TASubTitle2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+    <!-- endregion TextAppearance -->
 
 </resources>

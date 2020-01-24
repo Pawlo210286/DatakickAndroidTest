@@ -6,7 +6,7 @@ import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.KodeinTrigger
 
-class App: Application(), KodeinAware {
+class App : Application(), KodeinAware {
 
     override val kodein = Kodein.lazy {
         import(AppModule.get(this@App))

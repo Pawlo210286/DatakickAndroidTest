@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_back_circle_size">34dp</dimen>
+    <dimen name="btn_back_circle_radius">17dp</dimen>
+    <dimen name="carousel_height">200dp</dimen>
+    <dimen name="list_item_radius">6dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+</resources>
