@@ -17,6 +17,9 @@ class ItemHolder private constructor(
     fun bind(item: Item) {
         itemView.apply {
             tv_item_name.text = item.name
+            tv_size.text = resources.getString(R.string.size, item.size)
+            tv_serving_size.text =
+                resources.getString(R.string.serving_size, item.serverSize)
 
             setOnClickListener {
                 selectListener.invoke(item)

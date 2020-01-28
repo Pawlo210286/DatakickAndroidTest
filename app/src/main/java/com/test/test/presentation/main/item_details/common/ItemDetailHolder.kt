@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.list_item_item_detail.view.*
 class ItemDetailHolder private constructor(v: View) : RecyclerView.ViewHolder(v) {
     fun bind(detailKey: String, item: Item) {
         itemView.apply {
-            tv_key.text = detailKey
+            tv_key.text = detailKey.replace("_", " ")
             tv_value.text = item.otherFields[detailKey]
         }
     }

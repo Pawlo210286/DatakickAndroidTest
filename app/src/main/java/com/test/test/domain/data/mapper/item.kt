@@ -7,6 +7,8 @@ fun LinkedTreeMap<Any, Any>.toItem(): Item {
     return Item(
         id = this["gtin14"].toString(),
         name = this["name"].toString(),
+        size = this["size"]?.toString() ?: "",
+        serverSize = this["server_size"]?.toString() ?: "0",
         images = this@toItem["images"]?.let {
             (it as ArrayList<LinkedTreeMap<Any, Any>>).map {
                 it["url"].toString()

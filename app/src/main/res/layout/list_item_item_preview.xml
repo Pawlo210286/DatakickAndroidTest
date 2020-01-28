@@ -39,9 +39,19 @@
             tools:text="Baby Genius - Four Seasons" />
 
         <TextView
+            android:id="@+id/tv_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_4"
+            android:paddingStart="@dimen/space_16"
+            android:paddingEnd="@dimen/space_16"
+            android:text="todo: unit value"
+            android:textAppearance="@style/TASubTitle2" />
+
+        <TextView
+            android:id="@+id/tv_serving_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/space_16"
             android:paddingStart="@dimen/space_16"
             android:paddingEnd="@dimen/space_16"

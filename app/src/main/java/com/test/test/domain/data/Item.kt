@@ -7,12 +7,16 @@ import com.google.gson.internal.LinkedTreeMap
 class Item(
     val id: String,
     val name: String,
+    val size: String,
+    val serverSize: String,
     val images: List<String>,
     val otherFields: LinkedTreeMap<String, String>
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         id = parcel.readString().orEmpty(),
         name = parcel.readString().orEmpty(),
+        size = parcel.readString().orEmpty(),
+        serverSize = parcel.readString().orEmpty(),
         otherFields = parcel.let {
             val keys = it.readString().orEmpty().split(SEPARATOR)
             val values = it.readString().orEmpty().split(SEPARATOR)
@@ -40,6 +44,8 @@ class Item(
 
         if (id != other.id) return false
         if (name != other.name) return false
+        if (size != other.size) return false
+        if (serverSize != other.serverSize) return false
         if (otherFields != other.otherFields) return false
 
         return true
@@ -48,6 +54,8 @@ class Item(
     override fun hashCode(): Int {
         var result = id.hashCode()
         result = 31 * result + name.hashCode()
+        result = 31 * result + size.hashCode()
+        result = 31 * result + serverSize.hashCode()
         result = 31 * result + otherFields.hashCode()
         return result
     }
@@ -55,6 +63,8 @@ class Item(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
         parcel.writeString(name)
+        parcel.writeString(size)
+        parcel.writeString(serverSize)
 
         val keys = otherFields.keys.joinToString(SEPARATOR)
         val values = otherFields.values.joinToString(SEPARATOR)
