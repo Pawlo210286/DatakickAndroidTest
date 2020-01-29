@@ -5,7 +5,10 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.test.R
 import com.test.test.databinding.FragmentDetailsBinding
 import com.test.test.domain.data.Item
@@ -28,10 +31,21 @@ class DetailsFragment : BaseToolbarFragment<FragmentDetailsBinding>() {
     private val item: Item?
         get() = arguments?.getParcelable(ARG_KEY_ITEM)
 
+    private val listDividerDecorator by lazy {
+        DividerItemDecoration(
+            context,
+            LinearLayoutManager.VERTICAL
+        ).apply {
+            ContextCompat.getDrawable(requireContext(), R.drawable.divider)?.let {
+                setDrawable(it)
+            }
+        }
+    }
 
     override fun viewCreated(savedInstanceState: Bundle?) {
-        viewModel.setItemFromArguments(item)
+        binding.rvDetails.addItemDecoration(listDividerDecorator)
 
+        viewModel.setItemFromArguments(item)
         viewModel.itemLD.observe(viewLifecycleOwner, Observer {
             setupCarouselView(it.images)
             binding.rvDetails.adapter = ItemDetailsAdapter(it)
@@ -47,7 +61,7 @@ class DetailsFragment : BaseToolbarFragment<FragmentDetailsBinding>() {
         carousel_view?.setupCarouselView(
             images = images,
             withEmptyImageList = {
-                it.visibility = View.INVISIBLE
+                it.visibility = View.GONE
             })
     }
 
